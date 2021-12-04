@@ -1,8 +1,8 @@
 FROM quay.io/keycloak/keycloak:12.0.4
 
 # Install envsubst to write secrets from the environment into our config files at runtime
-#USER root
-RUN microdnf install gettext && microdnf clean all
+USER root
+RUN yum install gettext && microdnf clean all
 
 # Switch back to the user in the upstream image
 USER 1000
